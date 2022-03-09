@@ -1,0 +1,9 @@
+{
+  "recommendations": [
+    "dbaeumer.vscode-eslint",
+    "MisterJ.vue-volar-extention-pack",
+    "bradlc.vscode-tailwindcss",
+    "wayou.vscode-todo-highlight",
+    "lokalise.i18n-ally"
+  ]
+}

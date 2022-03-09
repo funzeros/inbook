@@ -1,0 +1,40 @@
+{
+  "Inbook Component": {
+    "scope": "vue",
+    "prefix": "component",
+    "body": [
+      "<script setup lang=\"ts\" name=\"$2\"></script>",
+      "<template>",
+      "  <div></div>",
+      "</template>"
+    ],
+    "description": "组件"
+  },
+  "Inbook Page": {
+    "scope": "vue",
+    "prefix": "page",
+    "body": [
+      "<script setup lang=\"ts\" name=\"$2\"></script>",
+      "<template>",
+      "  <div></div>",
+      "</template>",
+      "<route lang=\"yaml\">",
+      "meta:",
+      "  layout: store",
+      "</route>"
+    ],
+    "description": "页面"
+  },
+  "Inbook Layout": {
+    "scope": "vue",
+    "prefix": "layout",
+    "body": [
+      "<template>",
+      "  <main class=\"text-gray-700 dark:text-gray-200\">",
+      "$2",
+      "  </main>",
+      "</template>"
+    ],
+    "description": "布局"
+  }
+}

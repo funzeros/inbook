@@ -1,0 +1,17 @@
+node_modules
+public
+apps/inbook/dist
+apps/inbook/build
+.build/*
+.nuxt
+.history
+apps/inbook/static/*
+apps/inbook/static/js
+apps/inbook/static/sw.js
+apps/inbook/static/pdf
+apps/inbook/static/simple-project
+jsconfig.json
+package.json
+package-lock.json
+yarn.lock
+types/generated/*
