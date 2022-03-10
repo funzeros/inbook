@@ -11,16 +11,25 @@ const footerLinkListGroup = computed(() => [
       t('footer.branding'),
       t('footer.design'),
       t('footer.marketing'),
-      'Advertisement',
+      t('footer.advertisement'),
     ],
   },
   {
-    title: 'Company',
-    links: ['About us', 'Contact', 'Jobs', 'Press kit'],
+    title: t('footer.company'),
+    links: [
+      t('footer.about-us'),
+      t('footer.contact'),
+      t('footer.jobs'),
+      t('footer.press-kit'),
+    ],
   },
   {
-    title: 'Legal',
-    links: ['Terms of use', 'Privacy policy', 'Cookie policy'],
+    title: t('footer.legal'),
+    links: [
+      t('footer.terms-of-use'),
+      t('footer.privacy-policy'),
+      t('footer.cookie-policy'),
+    ],
   },
 ])
 </script>
@@ -42,21 +51,15 @@ const footerLinkListGroup = computed(() => [
     <div class="items-center grid-flow-col">
       <carbon-tropical-storm-tracks class="text-3xl" />
       <p>
-        Anonymous Open Source Organization.
-        <br />Providing reliable tech since 2022
+        {{ t('footer.org.desc') }}
+        <br />{{ t('footer.org.tech') }}
       </p>
     </div>
     <div class="md:place-self-center md:justify-self-end">
       <div class="grid grid-flow-col gap-4">
-        <a>
-          <carbon-logo-github class="text-3xl" />
-        </a>
-        <a>
-          <carbon-logo-wechat class="text-3xl" />
-        </a>
-        <a>
-          <carbon-logo-skype class="text-3xl" />
-        </a>
+        <carbon-logo-github class="icon-btn text-3xl" />
+        <carbon-logo-wechat class="icon-btn text-3xl" />
+        <carbon-logo-skype class="icon-btn text-3xl" />
       </div>
     </div>
   </footer>
