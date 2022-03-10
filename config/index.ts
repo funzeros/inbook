@@ -1,5 +1,5 @@
 // build dir
-export const buildDir = 'build'
+export const buildDir = 'dist'
 
 // public file
 export const publicDir = 'public'
