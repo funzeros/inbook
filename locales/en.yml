@@ -29,4 +29,12 @@ footer.legal: Legal
 footer.terms-of-use: Terms of use
 footer.privacy-policy: Privacy policy
 footer.cookie-policy: Cookie policy
-button.login: Login
+button.login: Log in
+title.login: Login
+title.sign-up: SignUp
+form.username: Username
+placeholder.username: Please type your username
+form.password: Password
+placeholder.password: Please type your password
+form.email: Email
+placeholder.email: Please type your email

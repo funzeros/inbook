@@ -30,3 +30,11 @@ footer.legal: 法律条款
 footer.terms-of-use: 使用条款
 footer.privacy-policy: 隐私协议
 button.login: 登录
+title.login: 登录
+title.sign-up: 注册
+form.username: 用户名
+placeholder.username: 请输入你的用户名
+form.password: 密码
+placeholder.password: 请输入你的密码
+form.email: 邮箱
+placeholder.email: 请输入你的邮箱

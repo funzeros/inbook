@@ -1,7 +1,15 @@
 <script setup lang="ts" name="InbHeaderLogin">
+import { useToggle } from '@vueuse/core'
+import { ref } from 'vue'
 import { useI18n } from 'vue-i18n'
+import { UserSignForm } from '~/stores/user.dto'
 
 const { t } = useI18n()
+const [isLogin, toggleIsLogin] = useToggle(true)
+
+const readyClickClass = 'text-base-300 cursor-pointer hover:underline'
+
+const form = ref(new UserSignForm())
 </script>
 <template>
   <InbModal>
@@ -10,13 +18,32 @@ const { t } = useI18n()
         {{ t('button.login') }}
       </div>
     </template>
-    <template #default="{ toggleVisible }">
-      <h3 class="font-bold text-lg">Congratulations random Interner user!</h3>
-      <p class="py-4">
-        You've been selected for a chance to get one year of subscription to use Wikipedia
-        for free!
-      </p>
-      <div class="btn" @click="toggleVisible(false)">关闭</div>
+    <template #default>
+      <h2 class="text-center text-2xl font-bold select-none">
+        <span :class="isLogin || readyClickClass" @click="toggleIsLogin(true)">
+          {{ t('title.login') }}
+        </span>
+        /
+        <span :class="isLogin && readyClickClass" @click="toggleIsLogin(false)">
+          {{ t('title.sign-up') }}
+        </span>
+      </h2>
+      <InbInput
+        v-model="form.username"
+        :label="t('form.username')"
+        :placeholder="t('placeholder.username')"
+      />
+      <InbInput
+        v-model="form.password"
+        :label="t('form.password')"
+        :placeholder="t('placeholder.password')"
+      />
+      <InbInput
+        v-if="!isLogin"
+        v-model="form.email"
+        :label="t('form.email')"
+        :placeholder="t('placeholder.email')"
+      />
     </template>
   </InbModal>
 </template>

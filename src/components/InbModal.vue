@@ -20,10 +20,6 @@ const toggleVisible = useToggle(visible)
           ✕
         </label>
         <slot :modalId="modalId" :toggleVisible="toggleVisible"></slot>
-        <!-- <div class="modal-action">
-          <slot name="action" ></slot>
-          <label :for="modalId" class="btn">Yay!</label>
-        </div> -->
       </div>
     </div>
   </teleport>
