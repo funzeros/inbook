@@ -1,17 +1,10 @@
 button:
-  about: 关于
   back: 返回
-  go: 确定
-  home: 首页
   toggle_dark: 切换深色模式
   toggle_langs: 切换语言
 intro:
   websit-name: Inbook
   desc: 这是Inbook网上书店
-  dynamic-route: 动态路由演示
-  hi: 你好，{name}
-  aka: 也叫
-  whats-your-name: 输入你的名字
 not-found: 未找到页面
 footer.services: 服务提供
 footer.branding: 品牌
@@ -29,8 +22,8 @@ footer.cookie-policy: Cookie协议
 footer.legal: 法律条款
 footer.terms-of-use: 使用条款
 footer.privacy-policy: 隐私协议
-button.login: 登录
-title.login: 登录
+button.log-in: 登录
+title.log-in: 登录
 title.sign-up: 注册
 form.username: 用户名
 placeholder.username: 请输入你的用户名
@@ -38,3 +31,7 @@ form.password: 密码
 placeholder.password: 请输入你的密码
 form.email: 邮箱
 placeholder.email: 请输入你的邮箱
+button.sign-up: 注册
+valid-tip.username: 用户名长度在 {min} 到 {max} 个字符
+valid-tip.password: 密码长度在 {min} 到 {max} 个字符
+valid-tip.email: 邮箱格式不正确

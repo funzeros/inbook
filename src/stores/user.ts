@@ -6,14 +6,13 @@ export const useUserStore = defineStore('user', () => {
   const userInfo = ref(new UserResDTO())
   const userToken = computed(() => unref(userInfo).token)
 
-  const onValidLoginState = () => {
-    if (userToken.value) return
-    console.log(1)
+  const setUserInfo = (payload: UserResDTO) => {
+    userInfo.value = payload
   }
   return {
     userInfo,
     userToken,
-    onValidLoginState,
+    setUserInfo,
   }
 })
 

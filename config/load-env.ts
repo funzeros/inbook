@@ -7,6 +7,7 @@ export interface ViteEnv {
   VITE_BASE_API: string
   VITE_BUILD_DROP_CONSOLE: string
   VITE_CDN_BASE: string
+  VITE_TIMEOUT: number
 }
 
 // 通过dotenv配置 需要加载指定.env文件 这样process.env打印到得就是对应得文件了

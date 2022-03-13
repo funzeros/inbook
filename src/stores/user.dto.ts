@@ -1,3 +1,4 @@
+import md5 from 'md5'
 const enum UserAuth {
   normal,
   admin,
@@ -5,10 +6,16 @@ const enum UserAuth {
 
 export class UserBase {
   username = ''
+  email = ''
 }
 export class UserSignForm extends UserBase {
   password = ''
-  email = ''
+  static encrypt(payload: UserSignForm) {
+    return {
+      ...payload,
+      password: md5(payload.password),
+    }
+  }
 }
 export class UserResDTO extends UserBase {
   id = 0

@@ -1,17 +1,10 @@
 button:
-  about: About
   back: Back
-  go: GO
-  home: Home
   toggle_dark: Toggle dark mode
   toggle_langs: Change languages
 intro:
   websit-name: Inbook
   desc: This is the INBOOK online bookstore
-  dynamic-route: Demo of dynamic route
-  hi: Hi, {name}!
-  aka: Also known as
-  whats-your-name: What's your name?
 not-found: Not found
 footer.services: Services
 footer.branding: Branding
@@ -29,12 +22,16 @@ footer.legal: Legal
 footer.terms-of-use: Terms of use
 footer.privacy-policy: Privacy policy
 footer.cookie-policy: Cookie policy
-button.login: Log in
-title.login: Login
-title.sign-up: SignUp
+button.log-in: Log In
+title.log-in: Log In
+title.sign-up: Sign Up
 form.username: Username
 placeholder.username: Please type your username
 form.password: Password
 placeholder.password: Please type your password
 form.email: Email
 placeholder.email: Please type your email
+button.sign-up: Sign Up
+valid-tip.username: The username contains {min} to {max} characters
+valid-tip.password: The password contains {min} to {max} characters
+valid-tip.email: The mailbox format is incorrect
