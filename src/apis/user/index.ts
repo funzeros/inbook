@@ -8,3 +8,6 @@ export const userRegisterReq = (data: UserSignForm) =>
 
 export const userLoginReq = (data: UserSignForm) =>
   r.request<R<UserResDTO>>({ url: api.login, method: 'POST', data })
+
+export const userLoginByTokenReq = () =>
+  r.request<R<UserResDTO>>({ url: api.token, method: 'POST' })

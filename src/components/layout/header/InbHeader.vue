@@ -33,13 +33,15 @@ const userStore = useUserStore()
         <carbon-language class="text-xl" />
       </a>
       <div class="flex-none">
-        <div class="dropdown dropdown-end">
-          <label tabindex="0" class="btn btn-ghost btn-circle">
-            <div class="indicator">
-              <carbon-shopping-cart class="text-xl" />
-              <span class="badge badge-sm indicator-item">8</span>
-            </div>
-          </label>
+        <InbDropdown>
+          <template #trigger>
+            <label tabindex="0" class="btn btn-ghost btn-circle">
+              <div class="indicator">
+                <carbon-shopping-cart class="text-xl" />
+                <span class="badge badge-sm indicator-item">8</span>
+              </div>
+            </label>
+          </template>
           <div
             tabindex="0"
             class="mt-3 card card-compact dropdown-content w-52 bg-base-100 shadow"
@@ -52,7 +54,7 @@ const userStore = useUserStore()
               </div>
             </div>
           </div>
-        </div>
+        </InbDropdown>
         <InbHeaderUser v-if="userStore.userToken" />
         <InbHeaderLogin v-else />
       </div>

@@ -41,7 +41,7 @@ export default ({ mode }: { mode: string }): Record<string, unknown> => {
   const define = {
     'process.env': process.env,
   }
-  const { VITE_BASE_API } = process.env
+  const { VITE_BASE_API, VITE_REQ_BASE_URL = '' } = process.env
   return {
     resolve: {
       alias: {
@@ -170,7 +170,7 @@ export default ({ mode }: { mode: string }): Record<string, unknown> => {
         strict: true,
       },
       proxy: {
-        '/api': {
+        [VITE_REQ_BASE_URL]: {
           target: VITE_BASE_API,
           changeOrigin: true,
           secure: false,

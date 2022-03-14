@@ -1,23 +1,17 @@
-<script setup lang="ts" name="InbHeaderUser"></script>
+<script setup lang="ts" name="InbHeaderUser">
+import { useUserMenu } from './headerUser'
+
+const { userMenu } = useUserMenu()
+</script>
 <template>
-  <div class="dropdown dropdown-end">
-    <label tabindex="0" class="btn btn-ghost btn-circle avatar">
-      <div class="w-10 rounded-full">
-        <img src="https://api.lorem.space/image/face?hash=33791" />
-      </div>
-    </label>
-    <ul
-      tabindex="0"
-      class="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52"
-    >
-      <li>
-        <a class="justify-between">
-          Profile
-          <span class="badge">New</span>
-        </a>
-      </li>
-      <li><a>Settings</a></li>
-      <li><a>Logout</a></li>
-    </ul>
-  </div>
+  <InbDropdown>
+    <template #trigger>
+      <label tabindex="0" class="btn btn-ghost btn-circle avatar">
+        <div class="w-10 rounded-full">
+          <img src="https://api.lorem.space/image/face?hash=33791" />
+        </div>
+      </label>
+    </template>
+    <InbMenu :menu="userMenu"></InbMenu>
+  </InbDropdown>
 </template>

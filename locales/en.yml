@@ -1,10 +1,8 @@
-button:
-  back: Back
-  toggle_dark: Toggle dark mode
-  toggle_langs: Change languages
-intro:
-  websit-name: Inbook
-  desc: This is the INBOOK online bookstore
+button.back: Back
+button.toggle_dark: Toggle dark mode
+button.toggle_langs: Change languages
+intro.websit-name: Inbook
+intro.desc: This is the INBOOK online bookstore
 not-found: Not found
 footer.services: Services
 footer.branding: Branding
@@ -35,3 +33,7 @@ button.sign-up: Sign Up
 valid-tip.username: The username contains {min} to {max} characters
 valid-tip.password: The password contains {min} to {max} characters
 valid-tip.email: The mailbox format is incorrect
+placeholder.username-mix-email: Please type your username/email
+form.username-mix-email: username/email
+button.profile: Profile
+button.log-out: LogOut

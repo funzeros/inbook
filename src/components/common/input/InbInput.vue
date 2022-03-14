@@ -1,7 +1,7 @@
 <script setup lang="ts" name="InbInput">
 import { computed, shallowRef, useAttrs, watch } from 'vue'
 import { isNil } from 'lodash-unified'
-import { useFormItem } from '~/hooks'
+import { useFormItem } from '~/composables'
 
 const attrs = useAttrs()
 

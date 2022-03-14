@@ -2,13 +2,13 @@
 import { useFocus, useToggle } from '@vueuse/core'
 import { onMounted, ref, unref, watchEffect } from 'vue'
 import { useI18n } from 'vue-i18n'
-import { useSubmit, inbMessage } from '~/hooks'
 import { UserSignForm } from '~/stores/user.dto'
 import type { FormInstance } from '~/components/common/form/form'
 import type { InbInputInstance } from '~/components/common/input/input'
 import { useRules } from './headerLogin'
 import { userLoginReq, userRegisterReq } from '~/apis/user'
 import { useUserStore } from '~/stores/user'
+import { useSubmit, inbMessage } from '~/composables'
 
 const userStore = useUserStore()
 
@@ -64,10 +64,16 @@ onMounted(() => {
       </h2>
       <div class="flex select-none">
         <InbForm class="w-80" ref="formRef" :form="form" :rules="rules">
-          <InbFormItem :label="t('form.username')" name="username" required>
+          <InbFormItem
+            :label="isLogin ? t('form.username-mix-email') : t('form.username')"
+            name="username"
+            required
+          >
             <InbInput
               v-model.trim="form.username"
-              :placeholder="t('placeholder.username')"
+              :placeholder="
+                isLogin ? t('placeholder.username-mix-email') : t('placeholder.username')
+              "
             />
           </InbFormItem>
           <InbFormItem :label="t('form.password')" name="password" required>
