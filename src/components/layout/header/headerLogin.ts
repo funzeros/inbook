@@ -1,10 +1,10 @@
-import { computed } from 'vue'
+import { computed, Ref } from 'vue'
 import { useI18n } from 'vue-i18n'
 import { FormRules } from '~/components/common/form/form'
 import type { UserSignForm } from '~/stores/user.dto'
 import { regexp } from '~/utils/regexp'
 
-export const useRules = () => {
+export const useRules = (isLogin: Ref<boolean>) => {
   const { t } = useI18n()
   const MIN_USERNAME_LENGTH = 4
   const MAX_USERNAME_LENGTH = 16
@@ -14,7 +14,7 @@ export const useRules = () => {
     username: [
       { required: true, message: t('placeholder.username'), trigger: ['blur', 'change'] },
       {
-        max: MAX_USERNAME_LENGTH,
+        max: isLogin.value ? void 0 : MAX_USERNAME_LENGTH,
         min: MIN_USERNAME_LENGTH,
         message: t('valid-tip.username', {
           min: MIN_USERNAME_LENGTH,

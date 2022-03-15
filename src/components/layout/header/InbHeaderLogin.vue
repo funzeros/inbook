@@ -22,7 +22,7 @@ const form = ref(new UserSignForm())
 
 const formRef = ref<FormInstance>()
 
-const { rules } = useRules()
+const { rules } = useRules(isLogin)
 
 const [submitLoading, handleSubmit] = useSubmit(async (isLoginReq: boolean) => {
   const validateReturn = await unref(formRef)?.validate()
