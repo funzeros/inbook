@@ -1,6 +1,7 @@
 <script setup lang="ts" name="InbHeader">
 import { useI18n } from 'vue-i18n'
-import { isDark, toggleDark } from '~/composables'
+import { useRouter } from 'vue-router'
+import { isDark, toggleDark, ROUTE_PATH_INDEX } from '~/composables'
 import { useUserStore } from '~/stores/user'
 
 const { t, availableLocales, locale } = useI18n()
@@ -10,12 +11,18 @@ const toggleLocales = () => {
   locale.value = locales[(locales.indexOf(locale.value) + 1) % locales.length]
 }
 const userStore = useUserStore()
+const router = useRouter()
+const handleGotoIndex = () => {
+  router.replace(ROUTE_PATH_INDEX)
+}
 </script>
 <template>
   <header class="sticky top-0">
-    <div class="navbar mb-8 shadow-sm shadow-base-300 bg-opacity-90 backdrop-blur">
+    <div class="navbar shadow-sm shadow-base-300 bg-opacity-90 backdrop-blur">
       <div class="flex-1">
-        <a class="btn btn-ghost normal-case text-xl">{{ t('intro.websit-name') }}</a>
+        <a class="btn btn-ghost normal-case text-xl" @click="handleGotoIndex">{{
+          t('intro.websit-name')
+        }}</a>
       </div>
       <a
         class="btn btn-ghost btn-circle"

@@ -1,5 +1,5 @@
 import md5 from 'md5'
-const enum UserAuth {
+export const enum UserAuth {
   normal,
   admin,
 }

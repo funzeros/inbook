@@ -25,6 +25,22 @@
     ],
     "description": "页面"
   },
+  "Inbook Page Workbench": {
+    "scope": "vue",
+    "prefix": "workbench",
+    "body": [
+      "<script setup lang=\"ts\" name=\"$2\"></script>",
+      "<template>",
+      "  <div></div>",
+      "</template>",
+      "<route lang=\"yaml\">",
+      "meta:",
+      "  layout: workbench",
+      "  requiresAuth: true",
+      "</route>"
+    ],
+    "description": "页面"
+  },
   "Inbook Layout": {
     "scope": "vue",
     "prefix": "layout",

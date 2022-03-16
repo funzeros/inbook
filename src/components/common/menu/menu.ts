@@ -2,14 +2,15 @@ import { isFunction, isBoolean } from 'lodash-unified'
 import { computed } from 'vue'
 
 type MenuPropWithFn<T> = T | (() => T)
-
+export type MenuClick = (payload: MouseEvent) => void
 export interface MenuItem {
   label: string
-  prop: string | symbol
+  prop: string
+  icon?: string
   badge?: MenuPropWithFn<string | number>
   disabled?: MenuPropWithFn<boolean>
   hidden?: MenuPropWithFn<boolean>
-  onClick?: (payload: MouseEvent) => void
+  onClick?: MenuClick
 }
 
 const unfnProp = <T>(prop: T): T extends MenuPropWithFn<infer U> ? U : never =>

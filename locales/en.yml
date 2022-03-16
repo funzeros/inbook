@@ -37,3 +37,7 @@ placeholder.username-mix-email: Please type your username/email
 form.username-mix-email: username/email
 button.profile: Profile
 button.log-out: LogOut
+button.workbench: Workbench
+menu.commodity-manage: CommodityManage
+menu.category-manage: CategoryManage
+menu.order-manage: OrderManage
