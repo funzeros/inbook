@@ -6,7 +6,7 @@ const { workbenchMenu } = useWorkbenchMenu()
 <template>
   <main class="bg-base-200 h-screen flex flex-col">
     <InbHeader />
-    <section class="h-full flex-1 flex bg-base-200">
+    <section class="h-full flex-1 flex bg-base-200 overflow-hidden">
       <InbSideMenu :menu="workbenchMenu"></InbSideMenu>
       <section class="flex-1">
         <router-view />

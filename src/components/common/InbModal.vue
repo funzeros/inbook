@@ -14,7 +14,7 @@ const toggleVisible = useToggle(visible)
   </label>
   <teleport :to="teleport">
     <input type="checkbox" v-model="visible" :id="modalId" class="modal-toggle" />
-    <div class="modal">
+    <div class="modal top-0 right-0 left-0 bottom-0">
       <div class="modal-box relative">
         <label :for="modalId" class="btn btn-sm btn-circle absolute right-2 top-2">
           ✕

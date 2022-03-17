@@ -1,4 +1,5 @@
 <script setup lang="ts" name="InbMenu">
+import { useI18n } from 'vue-i18n'
 import { MenuItem, useMenuContext } from './menu'
 
 const props = withDefaults(
@@ -9,6 +10,7 @@ const props = withDefaults(
 )
 
 const { menuRenderList } = useMenuContext(props.menu)
+const { t } = useI18n()
 </script>
 <template>
   <ul
@@ -21,8 +23,8 @@ const { menuRenderList } = useMenuContext(props.menu)
         :class="{ disabled: item.disabled }"
         @click="item.onClick"
       >
-        {{ item.label }}
-        <span class="badge" v-if="item.badge">{{ item.badge }}</span>
+        {{ t(item.label) }}
+        <span class="badge" v-if="item.badge">{{ t(item.badge) }}</span>
       </a>
     </li>
   </ul>

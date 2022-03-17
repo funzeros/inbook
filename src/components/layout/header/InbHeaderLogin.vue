@@ -30,7 +30,7 @@ const [submitLoading, handleSubmit] = useSubmit(async (isLoginReq: boolean) => {
   const request = isLoginReq ? userLoginReq : userRegisterReq
   const { data, message } = await request(UserSignForm.encrypt(form.value))
   data && userStore.setUserInfo(data)
-  inbMessage.success(message)
+  message && inbMessage.success(message)
 })
 
 // 密码输入框聚焦动画切换

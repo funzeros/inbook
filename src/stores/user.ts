@@ -33,6 +33,7 @@ export const useUserStore = defineStore(NAME_SPACE, () => {
 
   const logout = () => {
     clearUserInfo()
+    location.reload()
   }
 
   const loginByToken = async () => {

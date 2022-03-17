@@ -38,6 +38,8 @@ form.username-mix-email: username/email
 button.profile: Profile
 button.log-out: LogOut
 button.workbench: Workbench
-menu.commodity-manage: CommodityManage
-menu.category-manage: CategoryManage
-menu.order-manage: OrderManage
+menu.workbench-commodity_manage: CommodityManage
+menu.workbench-category_manage: CategoryManage
+menu.workbench-category_manage-test: Test
+menu.workbench-order_manage: OrderManage
+intro.workbench: Welcome to the INBOOK workbench

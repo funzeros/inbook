@@ -1,5 +1,5 @@
 import { isFunction, isBoolean } from 'lodash-unified'
-import { computed } from 'vue'
+import { computed, InjectionKey } from 'vue'
 
 type MenuPropWithFn<T> = T | (() => T)
 export type MenuClick = (payload: MouseEvent) => void
@@ -39,3 +39,5 @@ export const useMenuContext = (menuSource: MenuItem[]) => {
     menuRenderList,
   }
 }
+
+export const menuLevelKey: InjectionKey<number> = Symbol('menuLevelKey')

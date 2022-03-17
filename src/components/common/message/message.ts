@@ -4,6 +4,7 @@ export const messageType = {
   info: 'info',
   primary: 'primary',
   success: 'success',
+  error: 'error',
 } as const
 
 export type MessageType = typeof messageType

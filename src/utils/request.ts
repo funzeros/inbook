@@ -1,6 +1,7 @@
 import axios from 'axios'
 import { set } from 'lodash-unified'
 import qs from 'qs'
+import { inbMessage } from '~/composables'
 import { userStorage, UserStorageKey } from '~/stores/user'
 import { between } from './common'
 
@@ -43,7 +44,9 @@ const httpCodeText: Record<number, string> = Object.freeze({
 const DEFAULT_ERROR_TEXT = '出错啦！'
 
 const httpErrorCapture = (status: number) => {
-  return { message: httpCodeText[status] || DEFAULT_ERROR_TEXT }
+  const message = httpCodeText[status] || DEFAULT_ERROR_TEXT
+  inbMessage.error(message)
+  return {}
 }
 
 request.interceptors.response.use(

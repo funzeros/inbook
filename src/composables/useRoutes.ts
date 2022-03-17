@@ -1,6 +1,10 @@
 import { useRoute, useRouter } from 'vue-router'
 import type { RouteQueryAndHash } from 'vue-router'
 import { computed } from 'vue'
+
+export const ROUTE_PATH_STORE = '/'
+export const ROUTE_PATH_INDEX = '/'
+
 export const useRoutes = () => {
   const route = useRoute()
   const router = useRouter()

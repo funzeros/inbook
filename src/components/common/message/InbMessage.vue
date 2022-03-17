@@ -16,6 +16,7 @@ const classWithType: Record<MessageTypeKey, string> = {
   info: 'bg-gray-100 border-gray-200 text-gray-700',
   primary: 'bg-blue-100 border-blue-200 text-blue-700',
   success: 'bg-green-100 border-green-200 text-green-700',
+  error: 'bg-red-100 border-red-200 text-red-700',
 }
 </script>
 <template>

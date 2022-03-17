@@ -16,5 +16,16 @@ module.exports = {
     require('@tailwindcss/line-clamp'),
     require('@tailwindcss/aspect-ratio'),
     require('daisyui'),
+    require('tailwindcss-scrollbar'),
   ],
+  daisyui: {
+    styled: true,
+    themes: ['light', 'dark'],
+    base: true,
+    utils: true,
+    logs: true,
+    rtl: false,
+    prefix: '',
+    darkTheme: 'dark',
+  },
 }
