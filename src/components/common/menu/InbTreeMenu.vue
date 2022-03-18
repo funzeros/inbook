@@ -1,6 +1,6 @@
 <script setup lang="ts" name="InbTreeMenu">
 import { isEqual } from 'lodash-unified'
-import { inject, onMounted, provide, ref } from 'vue'
+import { computed, inject, onMounted, provide, ref } from 'vue'
 import { useI18n } from 'vue-i18n'
 import { MenuList, useRoutes } from '~/composables'
 import { menuLevelKey } from './menu'
@@ -22,13 +22,20 @@ const toggleMenu = (path: string) => {
 }
 
 const emit = defineEmits(['setActiveMenu'])
+const menuPath = computed(() => props.menu.map(({ path }) => path))
 const setActiveMenu = (p: string) => {
-  if (props.menu.map(({ path }) => path).includes(p)) {
-    toggleMenu(p)
-    emit('setActiveMenu', p.split('/').slice(0, -1).join('/'))
-  }
+  if (!menuPath.value.includes(p)) return
+  toggleMenu(p)
+  emit('setActiveMenu', p.split('/').slice(0, -1).join('/'))
+}
+const initMenu = () => {
+  const index = menuPath.value.indexOf(route.path)
+  if (index < 0) return
+  const { children } = props.menu[index]
+  children?.length && router.replace(children[0].path)
 }
 onMounted(() => {
+  initMenu()
   setActiveMenu(route.path)
 })
 

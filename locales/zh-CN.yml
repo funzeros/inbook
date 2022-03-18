@@ -38,6 +38,7 @@ form.username-mix-email: 用户名/邮箱
 button.profile: 个人中心
 button.log-out: 退出
 button.workbench: 工作台
+menu.workbench: 工作台
 menu.workbench-order_manage: 订单管理
 menu.workbench-commodity_manage: 商品管理
 menu.workbench-category_manage: 分类管理

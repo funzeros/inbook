@@ -12,8 +12,11 @@ interface MenuItemRaw {
   meta: RouteMeta
 }
 
-export type MenuList = (Omit<MenuItemRaw, 'children'> & { children: MenuList })[]
+export type MenuOriginItem = Omit<MenuItemRaw, 'children'>
+export type MenuItem = MenuOriginItem & { children: MenuList }
+export type MenuList = MenuItem[]
 
+const FAKE_INFINITY = 99999
 class LifePageRaw implements MenuItemRaw {
   public children: Map<string, LifePageRaw> = new Map()
   public name: string
@@ -30,10 +33,17 @@ class LifePageRaw implements MenuItemRaw {
         ...v,
         children: v.toRaw(),
       }
+    }).sort((acc, cur) => {
+      const accOrder = (acc.meta?.order ?? FAKE_INFINITY) as number
+      const curOrder = (cur.meta?.order ?? FAKE_INFINITY) as number
+      return accOrder - curOrder
     })
   }
   static getWorkbenchPage = (routeRecords: RouteRecordRaw[], prefix: string) => {
-    const filterPages = routeRecords.filter(({ path }) => path.startsWith(prefix))
+    const filterPages = routeRecords.filter(({ path, meta }) => {
+      const isMenu = (meta?.isMenu ?? false) as boolean
+      return path.startsWith(prefix) && isMenu
+    })
     const routesMap: Map<string, LifePageRaw> = new Map()
     filterPages.forEach((raw) => {
       this.setRaw(raw, routesMap, raw.path.split('/'))
@@ -53,8 +63,8 @@ class LifePageRaw implements MenuItemRaw {
 }
 
 export const workbenchPage = LifePageRaw.getWorkbenchPage(routes, ROUTE_PATH_WORKBENCH)
-
-export const workbenchMenuList = workbenchPage.get(ROUTE_PATH_WORKBENCH.slice(1))!.toRaw()
+export const workbenchRoute = workbenchPage.get(ROUTE_PATH_WORKBENCH.slice(1))
+export const workbenchMenuList = workbenchRoute?.toRaw() ?? []
 
 export const useWorkbench = () => {
   const route = useRoute()

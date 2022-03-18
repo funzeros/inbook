@@ -1,5 +1,6 @@
 .inb-message_wrapper {
   @apply fixed top-4 text-center w-full pointer-events-none;
+  z-index: 9999;
 }
 
 .inb-message_inner {

@@ -17,7 +17,7 @@ const handleGotoIndex = () => {
 }
 </script>
 <template>
-  <header class="sticky top-0">
+  <header class="sticky top-0 z-20">
     <div class="navbar shadow-sm shadow-base-300 bg-opacity-90 backdrop-blur">
       <div class="flex-1">
         <a class="btn btn-ghost normal-case text-xl" @click="handleGotoIndex">{{

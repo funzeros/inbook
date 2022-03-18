@@ -38,6 +38,7 @@ form.username-mix-email: username/email
 button.profile: Profile
 button.log-out: LogOut
 button.workbench: Workbench
+menu.workbench: Workbench
 menu.workbench-commodity_manage: CommodityManage
 menu.workbench-category_manage: CategoryManage
 menu.workbench-category_manage-test: Test
