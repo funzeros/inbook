@@ -20,5 +20,6 @@ export class UserSignForm extends UserBase {
 export class UserResDTO extends UserBase {
   id = 0
   token = ''
-  auth: UserAuth = 0
+  auth: UserAuth = UserAuth.normal
+  profilePhotoUrl = ''
 }

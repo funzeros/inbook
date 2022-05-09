@@ -100,7 +100,7 @@ onMounted(() => {
             {{ isLogin ? t('button.log-in') : t('button.sign-up') }}
           </button>
         </InbForm>
-        <div class="flex-1 self-center text-9xl">
+        <div class="flex-1 self-center text-9xl hidden sm:block">
           {{ isFocusPassword ? '🙈' : '🙉' }}
         </div>
       </div>
